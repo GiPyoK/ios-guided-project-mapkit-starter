@@ -44,9 +44,10 @@ class EarthquakesViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.mapView.addAnnotations(quakes)
                     
+                    // Zoom to the earthquake
                     // guard let largestQuake = quakes.first else { return }
                     
-                    // Zoom to the earthquake
+                    // Zoom to La Habra
                     let coordinateSpan = MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
                     let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 33.9319, longitude: -117.9461), span: coordinateSpan)
                     self.mapView.setRegion(region, animated: true)
