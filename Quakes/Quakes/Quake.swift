@@ -11,6 +11,10 @@ import Foundation
 // MKAnnotation requres we subclass NSObject
 // Allows us to show data on the a map
 
+class QuakeResults: Decodable {
+    let features: [Quake]
+}
+
 class Quake: NSObject, Decodable {
     
     let magnitude: Double
@@ -47,6 +51,10 @@ class Quake: NSObject, Decodable {
 
         
         super.init()
+    }
+    
+    override var description: String {
+        return "\(place)| magnitude: \(magnitude)"
     }
     
 }
